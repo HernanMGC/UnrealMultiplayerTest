@@ -5,6 +5,7 @@
 // Unreal engine
 #include "Kismet/GameplayStatics.h"
 #include "OnlineSubsystemUtils.h"
+#include "Online/OnlineSessionNames.h"
 
 // Game Project
 #include "Code/Public/UnrealTest/Game/UnrealTestGameMode.h"
