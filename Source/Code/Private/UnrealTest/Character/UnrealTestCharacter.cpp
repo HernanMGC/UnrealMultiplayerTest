@@ -9,14 +9,13 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "Net/UnrealNetwork.h"
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
-
 
 // Game Project
 #include "UnrealTest/Weapons/BaseWeapon.h"
 #include "UnrealTest/Components/HealthComponent.h"
+#include "UnrealTest/Components/KYNAbilitySystemComponent.h"
 #include "UnrealTest/Game/UnrealTestGameMode.h"
 #include "UnrealTest/UI/UnrealTestHUD.h"
 #include "UnrealTest/UI/HealthBarWidget.h"
@@ -41,6 +40,7 @@ AUnrealTestCharacter::AUnrealTestCharacter()
 	InitializeFollowCamera();
 	InitializeWeaponHolder();
 	InitializeHealthComponent();
+	InitializeASC();
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -96,6 +96,15 @@ void AUnrealTestCharacter::InitializeHealthComponent()
 		HealthWidgetComponent->SetupAttachment(GetMesh());
 	}
 }
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void AUnrealTestCharacter::InitializeASC()
+{
+	ASC = CreateDefaultSubobject<UKYNAbilitySystemComponent>(TEXT("ASC"));
+}
 #pragma endregion Initialization
 
 #pragma region Overrides
@@ -141,6 +150,12 @@ void AUnrealTestCharacter::BeginPlay()
 		HealthWidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
 		HealthWidgetComponent->SetWidget(healthWidget);
 	}
+
+	
+	if (ASC)
+	{
+		ASC->InitAbilityActorInfo(this, this);
+	}
 }
 
 // Binds inputs.
@@ -157,6 +172,15 @@ void AUnrealTestCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 	LookUpBinding(PlayerInputComponent);
 
 	ShootBinding(PlayerInputComponent);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////
+
+UAbilitySystemComponent* AUnrealTestCharacter::GetAbilitySystemComponent() const
+{
+	return ASC;
 }
 #pragma endregion Overrides
 

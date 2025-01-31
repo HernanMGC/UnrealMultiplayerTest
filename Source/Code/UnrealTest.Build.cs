@@ -8,6 +8,27 @@ public class UnrealTest : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "OnlineSubsystem", "OnlineSubsystemUtils" });
+		
+		PublicIncludePaths.AddRange(new string[] {
+			"UnrealTest" // Organizes the project into folders
+		});
+		
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core",
+			"CoreUObject",
+			"Engine",
+			"InputCore",
+			"HeadMountedDisplay",
+			"OnlineSubsystem",
+			"OnlineSubsystemUtils",
+			"GameplayAbilities",
+			"GameplayTags", 
+			"GameplayTasks"
+		});
+		
+		PrivateDependencyModuleNames.AddRange(new string[]
+		{
+		});
 	}
 }

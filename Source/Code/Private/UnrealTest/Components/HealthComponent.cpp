@@ -26,7 +26,7 @@ void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
 	// Auto bind self to owner's damge events
 	GetOwner()->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::TakeDamage);
 }
@@ -46,6 +46,7 @@ AUnrealTestGameMode* UHealthComponent::FindGameMode() {
 		GameModeRef = Cast<AUnrealTestGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
 	}
 
+	
 	return GameModeRef;
 }
 

@@ -5,6 +5,7 @@
 // Unreal Engine
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "AbilitySystemInterface.h"
 
 // Game Project
 #include "UnrealTestCharacter.generated.h"
@@ -19,9 +20,10 @@ class UHealthComponent;
 class UWidgetComponent;
 class UHealthBarWidget;
 class AUnrealTestHUD;
+class UKYNAbilitySystemComponent;
 
 UCLASS(config=Game)
-class AUnrealTestCharacter : public ACharacter
+class AUnrealTestCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -65,7 +67,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons", meta = (AllowPrivateAccess = "true"))
 	ABaseWeapon* CurrentWeapon = nullptr;
 
-	// Health component refere.ce.
+	// Health component reference.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Health", meta = (AllowPrivateAccess = "true"))
 	UHealthComponent* HealthComponent = nullptr;
 
@@ -78,7 +80,7 @@ private:
 	AUnrealTestHUD* PlayerHUD = nullptr;
 
 public:
-	// Gamepad trun rate.
+	// Gamepad true rate.
 	const float TURN_RATE_GAMEPAD = 50.f;
 
 	// Z velocity on jump.
@@ -87,7 +89,7 @@ public:
 	// Air control factor.
 	const float AIR_CONTROL = 0.35f;
 	
-	// Waximum walk speed.
+	// Maximum walk speed.
 	const float MAX_WALK_SPEED = 500.f;
 	
 	// Minimum analog walk speed.
@@ -95,6 +97,8 @@ public:
 	
 	// Braking deceleration on walking.
 	const float BRAKING_DECELERATION_WALKING = 2000.f;
+
+	TObjectPtr<UKYNAbilitySystemComponent> ASC;
 #pragma endregion Variables
 
 #pragma region Initialization
@@ -114,6 +118,9 @@ public:
 
 	// Initialize Health Component.
 	void InitializeHealthComponent();
+
+	// Initialize ASC.
+	void InitializeASC();
 #pragma endregion Initialization
 
 #pragma region Getters / Setters
@@ -138,6 +145,12 @@ protected:
 	// Binds inputs.
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	
+	// IAbilitySystemInterface interface
+	// Returns ASC for character 
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	// END IAbilitySystemInterface interface
+	
 #pragma endregion Overrides
 
 #pragma region Functions
