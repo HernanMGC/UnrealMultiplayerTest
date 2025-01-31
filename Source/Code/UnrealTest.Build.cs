@@ -7,11 +7,6 @@ public class UnrealTest : ModuleRules
 	public UnrealTest(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-
-		
-		PublicIncludePaths.AddRange(new string[] {
-			"UnrealTest" // Organizes the project into folders
-		});
 		
 		PublicDependencyModuleNames.AddRange(new string[]
 		{

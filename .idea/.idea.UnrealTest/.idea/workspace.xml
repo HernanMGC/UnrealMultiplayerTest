@@ -11,17 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87b21a3-955d-4422-b274-04ffecda936b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Components/KYNAbilitySystemComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Code/Public/UnrealTest/Components/KYNAbilitySystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnrealTest/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnrealTest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnrealTest/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Character/UnrealTestCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Character/UnrealTestCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Components/HealthComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Components/HealthComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Code/Public/UnrealTest/Character/UnrealTestCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Code/Public/UnrealTest/Character/UnrealTestCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Code/UnrealTest.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Code/UnrealTest.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnrealTest.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/UnrealTest.uproject" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Code/Private/UnrealTest/Attributes/KYNDamageAttributeSet.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Code/Public/UnrealTest/Attributes/KYNDamageAttributeSet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnrealTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnrealTest/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealTest/Definitions.UnrealTest.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE/UE5/UE_5.4/Engine/Source/Developer/AITestSuite/Public/AITestsCommon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE/UE5/UE_5.4/Engine/Source/Developer/Android/AndroidDeviceDetection/Public/Interfaces/IAndroidDeviceDetection.h" root0="FORCE_HIGHLIGHTING" />
@@ -489,7 +482,7 @@
       <workItem from="1738267576491" duration="537000" />
       <workItem from="1738268493271" duration="4257000" />
       <workItem from="1738281811080" duration="1685000" />
-      <workItem from="1738312161201" duration="2837000" />
+      <workItem from="1738312161201" duration="4519000" />
     </task>
     <servers />
   </component>
