@@ -45,6 +45,10 @@ public:
 	// Healthbar widget class to be created over non-local players.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Configuration|Health")
 	TSubclassOf<UHealthBarWidget> HealthWidgetWorldSpaceTemplate = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ASC")
+	TObjectPtr<UKYNAbilitySystemComponent> ASC = nullptr;
+
 #pragma endregion Configuration
 
 #pragma region Variables
@@ -98,7 +102,6 @@ public:
 	// Braking deceleration on walking.
 	const float BRAKING_DECELERATION_WALKING = 2000.f;
 
-	TObjectPtr<UKYNAbilitySystemComponent> ASC;
 #pragma endregion Variables
 
 #pragma region Initialization

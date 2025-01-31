@@ -1,8 +1,8 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 // Unreal Engine
-#include "Net/UnrealNetwork.h"
 #include "UnrealTest/Attributes/UTCombatAttributeSet.h"
+#include "Net/UnrealNetwork.h"
 
 UUTCombatAttributeSet::UUTCombatAttributeSet()
 	: BaseDamage(0.0f)
